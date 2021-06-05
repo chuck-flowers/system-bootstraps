@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+cat ./packages | xargs pacman -S --noconfirm
+
