@@ -1,0 +1,9 @@
+deb http://us.archive.ubuntu.com/ubuntu/ groovy multiverse main restricted universe
+deb http://us.archive.ubuntu.com/ubuntu/ groovy-updates multiverse main restricted universe
+deb http://us.archive.ubuntu.com/ubuntu/ groovy-backports multiverse main restricted universe
+deb http://security.ubuntu.com/ubuntu groovy-security multiverse main restricted universe
+deb https://cli.github.com/packages groovy main
+deb [arch=amd64,arm64,armhf] http://packages.microsoft.com/repos/code stable main
+deb [arch=amd64] https://download.docker.com/linux/ubuntu groovy stable
+deb http://ppa.launchpad.net/lutris-team/lutris/ubuntu/ groovy main
+deb [arch=amd64,i386] https://repo.steampowered.com/steam/ stable steam

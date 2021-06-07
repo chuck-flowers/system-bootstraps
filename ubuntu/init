@@ -1,0 +1,3 @@
+cat ./repositories | xargs apt-add-repositories
+cat ./packages | xargs apt-get install -y
+
