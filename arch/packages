@@ -1,13 +1,22 @@
-dolphin
+# Boot Dependencies
 efibootmgr
-firefox
-git
 grub
-konsole
-man-db
+
+# Systemd Services
 networkmanager
+
+# Desktop Environment
+dolphin
+konsole
 plasma-desktop
-sudo
-vim
 xorg-server
 xorg-xinit
+
+# Common GUI Apps
+firefox
+
+# CLI Utilities
+git
+sudo
+vim
+

@@ -1,4 +1,4 @@
 #!/bin/env bash
 
-cat ./packages | xargs pacman -S --noconfirm
+grep -Ev '^#|^$' ./packages | xargs pacman -S --noconfirm
 
