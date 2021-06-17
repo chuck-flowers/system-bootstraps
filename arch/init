@@ -2,3 +2,5 @@
 
 grep -Ev '^#|^$' ./packages | xargs pacman -S --noconfirm
 
+git clone --bare https://github.com/chuck-flowers/.dotfiles $HOME/.dotfiles
+
