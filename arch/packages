@@ -2,21 +2,47 @@
 efibootmgr
 grub
 
-# Systemd Services
-networkmanager
-
 # Desktop Environment
-dolphin
-konsole
-plasma-desktop
+alacritty
+dunst
+firefox
+i3-gaps
+polybar
+rofi
+xdg-utils
 xorg-server
 xorg-xinit
 
-# Common GUI Apps
-firefox
+# Gaming/Graphics
+nvidia
+nvidia-utils
+steam
+
+# Networking
+networkmanager
+openssh
+
+# Audio
+pipewire
+pipewire-alsa
+pipewire-pulse
+
+# Media Editing
+gimp
+inkscape
+
+# Installation
+yay
 
 # CLI Utilities
+bash-completion
 git
+github-cli
+neofetch
 sudo
 vim
+
+# Fonts
+ttf-fira-code
+ttf-font-awesome
 
