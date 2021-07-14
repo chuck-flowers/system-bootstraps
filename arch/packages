@@ -7,8 +7,11 @@ alacritty
 dunst
 firefox
 i3-gaps
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
 nitrogen
-polybar
+pcmanfm
 rofi
 xdg-utils
 xorg-server
@@ -32,16 +35,24 @@ pipewire-pulse
 gimp
 inkscape
 
-# Installation
-yay
+# Sys Admin
+lm_sensors
+
+# Development
+base-devel
+git
+github-cli
+vim
 
 # CLI Utilities
 bash-completion
-git
-github-cli
+cmatrix
+htop
+man-db
 neofetch
 sudo
-vim
+tldr
+tree
 
 # Fonts
 ttf-fira-code
