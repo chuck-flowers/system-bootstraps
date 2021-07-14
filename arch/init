@@ -1,6 +1,18 @@
 #!/bin/env bash
 
+# Install the official packages
 grep -Ev '^#|^$' ./packages | xargs pacman -S --noconfirm
 
+# Download personal dotfiles
 git clone --bare https://github.com/chuck-flowers/.dotfiles $HOME/.dotfiles
+
+# Install yay
+mkdir -p ~/Source/Repos
+git clone aur.archlinux.org/yay.git ~/Sources/Repos/yay
+cd ~/Source/Repos/yay;
+makepkg -sir --noconfirm;
+cd -;
+
+# Install AUR packages
+grep -Ev '^#|^$' ./aur-packages | xargs yay -S --noconfirm
 
