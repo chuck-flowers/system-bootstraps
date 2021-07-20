@@ -4,6 +4,7 @@ grub
 
 # Desktop Environment
 alacritty
+dex
 dunst
 firefox
 i3-gaps
