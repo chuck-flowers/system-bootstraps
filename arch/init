@@ -1,18 +1,30 @@
 #!/bin/env bash
 
-# Install the official packages
-grep -Ev '^#|^$' ./packages | xargs pacman -S --noconfirm
+# Check for the minimal programs 
+for cli in grep xargs pacman; do
+	type $cli > /dev/null 2/&1 || echo "ERROR: Install '$cli'" && exit 1;
+done
+
+# Create an empty log file
+local logFile;
+logFile="$(pwd)/bootstrap.log"
+cat /dev/null > $logFile;
+
+# Install packages from the official repository
+grep -Ev '^#|^$' ./packages | xargs pacman -S --noconfirm > $logFile
 
 # Download personal dotfiles
-git clone --bare https://github.com/chuck-flowers/.dotfiles $HOME/.dotfiles
+git clone --bare https://github.com/chuck-flowers/.dotfiles "$HOME/.dotfiles"
+git checkout --git-dir "$HOME/.dotfiles" --work-tree "$HOME"
+git submodule update --init --recursive
 
 # Install yay
-mkdir -p ~/Source/Repos
-git clone aur.archlinux.org/yay.git ~/Sources/Repos/yay
-cd ~/Source/Repos/yay;
+mkdir -p "$HOME/Source/Repos"
+git clone 'aur.archlinux.org/yay.git' "$HOME/Sources/Repos/yay";
+cd "$HOME/Source/Repos/yay";
 makepkg -sir --noconfirm;
 cd -;
 
-# Install AUR packages
+# Install packages from the Arch User Repository
 grep -Ev '^#|^$' ./aur-packages | xargs yay -S --noconfirm
 
