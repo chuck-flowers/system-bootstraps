@@ -6,12 +6,12 @@ grub
 alacritty
 dex
 dunst
-firefox
 i3-gaps
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 nitrogen
+picom
 pcmanfm
 rofi
 xdg-utils
@@ -21,6 +21,8 @@ xorg-xinit
 # Gaming/Graphics
 nvidia
 nvidia-utils
+nvidia-settings
+nvtop
 steam
 
 # Networking
@@ -28,32 +30,40 @@ networkmanager
 openssh
 
 # Audio
-pipewire
-pipewire-alsa
-pipewire-pulse
+pavucontrol
+pulseaudio
+pulseaudio-alsa
 
 # Media Editing
 gimp
 inkscape
 
-# Sys Admin
+# Social
+discord
+
+# System Admin
+htop
 lm_sensors
 
 # Development
-base-devel
+binutils
 git
 github-cli
+make
 vim
 
-# CLI Utilities
+# Shell Utilities
 bash-completion
-cmatrix
-htop
+
+# CLI Utilities
 man-db
 neofetch
 sudo
 tldr
 tree
+
+# Fun Utilities
+cmatrix
 
 # Fonts
 ttf-fira-code
