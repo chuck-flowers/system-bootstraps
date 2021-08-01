@@ -47,6 +47,8 @@ lm_sensors
 
 # Development
 binutils
+docker
+docker-compose
 fakeroot
 git
 github-cli
