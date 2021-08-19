@@ -1,8 +1,12 @@
 #!/bin/env bash
 
+fail() {
+	echo > /dev/stderr "$1" && exit 1;
+}
+
 # Check for the minimal programs 
-for cli in grep xargs pacman; do
-	type $cli > /dev/null 2/&1 || echo "ERROR: Install '$cli'" && exit 1;
+for cli in cat grep pacman xargs; do
+	type $cli > /dev/null 2>&1 || fail "ERROR: Install '$cli'";
 done
 
 # Create an empty log file
@@ -10,20 +14,27 @@ local logFile;
 logFile="$(pwd)/bootstrap.log"
 cat /dev/null > $logFile;
 
+# Define redirection
+local redir;
+redir=">>'$logFile' 2>&1"
+
 # Install packages from the official repository
-grep -Ev '^#|^$' ./packages | xargs pacman -S --noconfirm > $logFile
+grep -Ev '^#|^$' ./packages | xargs pacman -S --noconfirm $redir\
+	|| fail "ERROR: Failed to install packages";
 
 # Download personal dotfiles
-git clone --bare https://github.com/chuck-flowers/.dotfiles "$HOME/.dotfiles"
-git checkout --git-dir "$HOME/.dotfiles" --work-tree "$HOME"
-git submodule update --init --recursive
+git clone --bare https://github.com/chuck-flowers/.dotfiles "$HOME/.dotfiles" $redir\
+	&& git checkout --git-dir "$HOME/.dotfiles" --work-tree "$HOME" $redir\;
+	&& git submodule update --init --recursive $redir\
+|| fail "ERROR: Failed to download dotfiles";
 
 # Install yay
-mkdir -p "$HOME/Source/Repos"
-git clone 'aur.archlinux.org/yay.git' "$HOME/Sources/Repos/yay";
-cd "$HOME/Source/Repos/yay";
-makepkg -sir --noconfirm;
-cd -;
+mkdir -p "$HOME/Source/Repos" $redir\
+	&& git clone 'aur.archlinux.org/yay.git' "$HOME/Sources/Repos/yay" $redir\
+	&& cd "$HOME/Source/Repos/yay" $redir\
+	&& makepkg -sir --noconfirm $redir\
+	&& cd - $redir\
+|| fail "ERROR: Failed to install yay";
 
 # Install packages from the Arch User Repository
 grep -Ev '^#|^$' ./aur-packages | xargs yay -S --noconfirm
