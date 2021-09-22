@@ -1,18 +1,24 @@
+# Base system
+base
+linux
+linux-firmware
+
 # Boot Dependencies
 efibootmgr
 grub
 
 # Desktop Environment
 alacritty
-dex
 dunst
-i3-gaps
+himalaya
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
+newsboat
 nitrogen
 picom
-pcmanfm
+qtile
+ranger
 rofi
 xdg-utils
 xorg-server
@@ -50,9 +56,11 @@ binutils
 docker
 docker-compose
 fakeroot
+gcc
 git
 github-cli
 make
+python-pip
 vim
 
 # Shell Utilities
@@ -61,12 +69,15 @@ bash-completion
 # CLI Utilities
 man-db
 neofetch
+pass
 sudo
 tldr
 tree
 
 # Fun Utilities
 cmatrix
+figlet
+lolcat
 
 # Fonts
 ttf-fira-code

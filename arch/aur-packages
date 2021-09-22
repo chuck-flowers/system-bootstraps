@@ -1,10 +1,14 @@
+# Package Management
+yay
+
 # Desktop Environment
 brave-bin
 gruvbox-dark-gtk
 gruvbox-dark-icons-gtk
-polybar
 
 # Gaming/Graphics
+goverlay
+gwe
 humble-lumpia-git
 mangohud
 
