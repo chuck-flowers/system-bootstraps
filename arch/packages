@@ -20,6 +20,7 @@ picom
 qtile
 ranger
 rofi
+xclip
 xdg-utils
 xorg-server
 xorg-xinit
@@ -36,6 +37,8 @@ networkmanager
 openssh
 
 # Audio
+mpd
+ncmpcpp
 pavucontrol
 pulseaudio
 pulseaudio-alsa
@@ -48,6 +51,7 @@ inkscape
 discord
 
 # System Admin
+cronie
 htop
 lm_sensors
 
@@ -60,7 +64,9 @@ gcc
 git
 github-cli
 make
+pkgconf
 python-pip
+rustup
 vim
 
 # Shell Utilities
@@ -68,7 +74,9 @@ bash-completion
 
 # CLI Utilities
 man-db
+mdcat
 neofetch
+pandoc
 pass
 sudo
 tldr
